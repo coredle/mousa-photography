@@ -1,0 +1,166 @@
+.container {
+  max-width: 1100px;
+  margin: 5rem auto 0;
+  position: relative;
+  z-index: 5;
+  padding: 0 2rem;
+}
+
+.glassCard {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(198, 0, 0, 0.1);
+  border-radius: 2px;
+  padding: 4rem;
+  box-shadow: 0 4px 40px rgba(26, 15, 15, 0.06);
+}
+
+.sectionHeader {
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(26, 15, 15, 0.08);
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.sectionSub {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(26, 15, 15, 0.45);
+}
+
+/* ─── GRID LAYOUT ─── */
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 3rem;
+  margin-bottom: 4rem;
+}
+
+.fullWidth {
+  grid-column: span 2;
+}
+
+/* ─── INPUTS ─── */
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(26, 15, 15, 0.5);
+  font-weight: 600;
+}
+
+.input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(26, 15, 15, 0.15);
+  padding: 1rem 0;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  border-bottom-color: var(--accent);
+  background: rgba(198, 0, 0, 0.02);
+}
+
+/* ─── CONDITIONS ─── */
+.conditionsSection {
+  margin-top: 6rem;
+  padding-top: 4rem;
+  border-top: 1px solid rgba(26, 15, 15, 0.08);
+}
+
+.conditionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.conditionItem {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.conditionIcon {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.conditionText {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(26, 15, 15, 0.6);
+}
+
+/* ─── SUBMIT BUTTON ─── */
+.submitWrap {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.submitBtn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 1.2rem 4rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.submitBtn:hover {
+  background: var(--foreground);
+  transform: translateY(-2px);
+}
+
+.footerNote {
+  font-size: 0.75rem;
+  color: rgba(26, 15, 15, 0.35);
+  letter-spacing: 0.05em;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .formGrid, .conditionsGrid {
+    grid-template-columns: 1fr;
+  }
+  .fullWidth {
+    grid-column: span 1;
+  }
+  .glassCard {
+    padding: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin-top: 3rem;
+    padding: 0 1rem;
+  }
+}

@@ -1,0 +1,111 @@
+/* ════════════════════════════════
+   PROJECT DETAIL PAGE — project.module.css
+════════════════════════════════ */
+
+
+
+/* ─── Lightbox ─── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(10, 6, 6, 0.97);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lbFadeIn 0.25s ease;
+}
+
+@keyframes lbFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lbClose {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.25s;
+  z-index: 10;
+}
+
+.lbClose svg { width: 20px; height: 20px; }
+.lbClose:hover { border-color: #fff; color: #fff; }
+
+.lbArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.6);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.25s;
+  z-index: 10;
+}
+.lbArrow svg { width: 22px; height: 22px; }
+.lbArrow:hover { background: rgba(255,255,255,0.12); color: #fff; }
+.lbPrev { left: 2.5rem; }
+.lbNext { right: 2.5rem; }
+
+.lbImageWrap {
+  position: relative;
+  width: 85vw;
+  height: 80vh;
+  max-width: 1200px;
+}
+
+.lbMeta {
+  position: absolute;
+  bottom: -3.5rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lbCaption {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.lbCounter {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1100px) {
+  .heroContent { padding: 3rem; }
+  .gallery { columns: 2; padding: 3rem; }
+  .bottomNav { padding: 3rem; }
+}
+
+@media (max-width: 768px) {
+  .heroContent { padding: 2rem 1.5rem; }
+  .descSection { padding: 3rem 1.5rem 0; }
+  .gallery { columns: 1; padding: 2rem 1.5rem; }
+  .galleryItem { height: 260px; }
+  .galleryTall { height: 380px; }
+  .bottomNav { flex-direction: column; gap: 1.5rem; padding: 3rem 1.5rem; }
+  .lbImageWrap { width: 95vw; height: 60vh; }
+  .lbMeta { bottom: -4rem; }
+  .lbPrev { left: 1rem; }
+  .lbNext { right: 1rem; }
+}

@@ -1,0 +1,81 @@
+.ctaSection {
+  background: #f3eeeb;
+  border-top: 1px solid rgba(198, 0, 0, 0.08);
+  padding: 8rem 0;
+}
+
+.ctaBox {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.ctaBox h2 {
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  line-height: 1.2;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.ctaBox p {
+  font-size: 0.9rem;
+  color: rgba(26, 15, 15, 0.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.ctaBtns {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.ctaBtnPrimary {
+  padding: 1.1rem 2.8rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.ctaBtnPrimary:hover {
+  background: var(--foreground);
+  transform: translateY(-2px);
+}
+
+.ctaBtnSecondary {
+  padding: 1.1rem 2.8rem;
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid rgba(26, 15, 15, 0.25);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  transition: border-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.ctaBtnSecondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}

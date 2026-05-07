@@ -1,0 +1,134 @@
+.introSection {
+  padding: 10rem 0;
+  background: var(--background);
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 7rem;
+  align-items: center;
+}
+
+.portraitWrap {
+  position: relative;
+  height: 680px;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 32px 80px rgba(26, 15, 15, 0.14);
+}
+
+.portraitWrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(198, 0, 0, 0.15);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.portraitBadge {
+  position: absolute;
+  bottom: 2rem;
+  right: -1.5rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 1.2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 12px 32px rgba(198, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.badgeNumber {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.badgeLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-top: 0.3rem;
+}
+
+.introText {
+  display: flex;
+  flex-direction: column;
+}
+
+.eyebrowDark {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(26, 15, 15, 0.45);
+  margin-bottom: 1.5rem;
+}
+
+.introHeading {
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.2;
+  color: var(--foreground);
+  margin-bottom: 2rem;
+}
+
+.introText p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: rgba(26, 15, 15, 0.65);
+  margin-bottom: 1.4rem;
+}
+
+.statsRow {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(198, 0, 0, 0.12);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.statNum {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(26, 15, 15, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .introGrid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .portraitWrap {
+    height: 480px;
+  }
+
+  .portraitBadge {
+    right: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .statsRow {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}

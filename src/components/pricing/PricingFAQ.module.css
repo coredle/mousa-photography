@@ -1,0 +1,53 @@
+.faqSection {
+  background: #f3eeeb;
+  border-top: 1px solid rgba(198, 0, 0, 0.08);
+  padding: 8rem 0;
+}
+
+.faqHeader {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+}
+
+.faqHeader h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin-top: 0.5rem;
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faqQ {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--foreground);
+  margin-bottom: 0.8rem;
+}
+
+.faqA {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(26, 15, 15, 0.6);
+}
+
+@media (max-width: 768px) {
+  .faqGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

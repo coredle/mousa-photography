@@ -1,0 +1,48 @@
+.pressBar {
+  background: var(--foreground);
+  padding: 2.2rem 0;
+}
+
+.pressInner {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pressLabel {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.pressLogos {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pressLogo {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.02em;
+  transition: color 0.3s;
+  cursor: default;
+}
+
+.pressLogo:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+  .pressLogos {
+    gap: 1.5rem;
+  }
+}

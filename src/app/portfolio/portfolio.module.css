@@ -1,0 +1,11 @@
+/* ════════════════════════════════
+   PORTFOLIO PAGE  –  portfolio.module.css
+════════════════════════════════ */
+
+/* ─── MAIN ─── */
+.main {
+  min-height: 100vh;
+  background: var(--background);
+}
+
+

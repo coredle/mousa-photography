@@ -1,0 +1,75 @@
+.splitSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 680px;
+}
+
+.splitImage {
+  position: relative;
+  overflow: hidden;
+}
+
+.splitText {
+  background: #1a0f0f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 8rem;
+  gap: 1.5rem;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(198, 0, 0, 0.7);
+}
+
+.splitText h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+  color: #fff;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.splitText p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+}
+
+.splitCta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 2.5rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.3s;
+  align-self: flex-start;
+}
+
+.splitCta:hover {
+  background: #fff;
+  color: var(--foreground);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .splitSection {
+    grid-template-columns: 1fr;
+  }
+
+  .splitImage {
+    height: 420px;
+  }
+
+  .splitText {
+    padding: 5rem 3rem;
+  }
+}

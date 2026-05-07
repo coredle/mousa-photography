@@ -1,0 +1,121 @@
+.footer {
+  background: var(--background);
+  border-top: 1px solid var(--glass-border);
+  margin-top: 6rem;
+}
+
+.inner {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* ─── Top ─── */
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  text-align: center;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--foreground);
+  transition: color 0.3s;
+}
+
+.logo:hover {
+  color: var(--accent);
+}
+
+.tagline {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: rgba(26, 15, 15, 0.35);
+  margin: 0;
+}
+
+/* ─── Nav ─── */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.navCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.navHeading {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: rgba(26, 15, 15, 0.35);
+  margin-bottom: 0.3rem;
+}
+
+.navCol a {
+  font-size: 0.88rem;
+  color: rgba(26, 15, 15, 0.55);
+  transition: color 0.25s;
+  letter-spacing: 0.02em;
+}
+
+.navCol a:hover {
+  color: var(--accent);
+}
+
+/* ─── Divider ─── */
+.divider {
+  height: 1px;
+  background: rgba(198, 0, 0, 0.1);
+}
+
+/* ─── Bottom ─── */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copy {
+  font-size: 0.78rem;
+  color: rgba(26, 15, 15, 0.3);
+  margin: 0;
+}
+
+.avail {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .nav {
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

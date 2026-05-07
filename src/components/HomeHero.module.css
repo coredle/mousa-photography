@@ -1,0 +1,260 @@
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero {
+  height: 100vh;
+  min-height: 700px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding-bottom: 8rem;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  filter: brightness(0.6);
+  transform: scale(1.04);
+  transition: transform 8s ease;
+}
+
+.hero:hover .heroImage {
+  transform: scale(1.08);
+}
+
+/* Bottom gradient — text readability */
+.heroGradientBottom {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(26, 15, 15, 0.85) 0%,
+    rgba(26, 15, 15, 0.4) 45%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+/* Top gradient — navbar fade */
+.heroGradientTop {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 15, 15, 0.45) 0%,
+    transparent 30%
+  );
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 4rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Availability pill */
+.heroPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.5rem 1.2rem;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.8);
+  align-self: flex-start;
+}
+
+.heroPillDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 8px #4ade80;
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px #4ade80; }
+  50%       { opacity: 0.6; box-shadow: 0 0 4px #4ade80; }
+}
+
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(3.2rem, 7vw, 7rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.heroTitle em {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.heroSub {
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 480px;
+  margin: 0;
+}
+
+/* CTA buttons */
+.heroCtas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.heroBtnPrimary {
+  display: inline-block;
+  padding: 1.1rem 2.8rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.heroBtnPrimary:hover {
+  background: #fff;
+  color: var(--foreground);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(26, 15, 15, 0.25);
+}
+
+.heroBtnSecondary {
+  display: inline-block;
+  padding: 1.1rem 2.8rem;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s;
+}
+
+.heroBtnSecondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+/* Inline stats */
+.heroStats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  align-self: flex-start;
+}
+
+.heroStat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.heroStatNum {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: #fff;
+  line-height: 1;
+}
+
+.heroStatLabel {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.heroStatDivider {
+  width: 1px;
+  height: 2.5rem;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Scroll cue */
+.heroScroll {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 4rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.heroScrollLine {
+  width: 1px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.3);
+  display: block;
+  animation: scrollLine 2s ease-in-out infinite;
+  transform-origin: top;
+}
+
+@keyframes scrollLine {
+  0%   { transform: scaleY(0); opacity: 0; }
+  50%  { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+.heroScrollText {
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  writing-mode: vertical-lr;
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .heroContent {
+    padding: 0 1.5rem;
+  }
+  .heroTitle {
+    font-size: 2.8rem;
+  }
+  .heroScroll {
+    display: none;
+  }
+  .heroStats {
+    gap: 1.2rem;
+  }
+  .heroCtas {
+    flex-direction: column;
+  }
+  .heroBtnPrimary,
+  .heroBtnSecondary {
+    text-align: center;
+  }
+}

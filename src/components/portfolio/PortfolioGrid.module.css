@@ -1,0 +1,131 @@
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  padding: 2rem 6rem 6rem;
+}
+
+.projectCard {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+  height: 480px;
+  background: #e8e0dd;
+  cursor: pointer;
+}
+
+.projectCardWide {
+  grid-column: span 2;
+  height: 560px;
+}
+
+.projectImg {
+  position: absolute;
+  inset: 0;
+}
+
+.img {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.6s ease;
+  filter: brightness(0.95) grayscale(0.05);
+}
+
+.projectOverlay {
+  position: absolute;
+  inset: 0;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.projectCard:hover .projectOverlay {
+  opacity: 1;
+}
+
+.projectCard:hover .img {
+  transform: scale(1.06);
+  filter: brightness(0.6);
+}
+
+.cardCat {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--accent);
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.1;
+  transform: translateY(12px);
+  transition: transform 0.45s ease 0.05s;
+}
+
+.projectCard:hover .cardTitle {
+  transform: translateY(0);
+}
+
+.cardLoc {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  transform: translateY(12px);
+  transition: transform 0.45s ease 0.1s;
+}
+
+.projectCard:hover .cardLoc {
+  transform: translateY(0);
+}
+
+.cardViewBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin-top: 0.5rem;
+  transform: translateY(12px);
+  transition: transform 0.45s ease 0.15s;
+}
+
+.projectCard:hover .cardViewBtn {
+  transform: translateY(0);
+}
+
+.photoCount {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  backdrop-filter: blur(8px);
+}
+
+@media (max-width: 900px) {
+  .projectGrid {
+    grid-template-columns: 1fr;
+    padding: 2rem 2rem 4rem;
+  }
+  .projectCard,
+  .projectCardWide {
+    grid-column: span 1;
+    height: 380px;
+  }
+}
