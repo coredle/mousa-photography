@@ -146,9 +146,9 @@
   transform: translateY(-6.5px) rotate(-45deg);
 }
 
-/* When menu open, bars are always white (drawer is dark) */
+/* When menu open, bars are dark (drawer is light) */
 .hamburgerOpen .bar {
-  background: #fff !important;
+  background: var(--foreground) !important;
 }
 
 /* ════════════════════════════════
@@ -173,11 +173,11 @@
   transition: visibility 0s linear 0s;
 }
 
-/* Dark background */
+/* Light background */
 .drawerBg {
   position: absolute;
   inset: 0;
-  background: #1a0f0f;
+  background: var(--background);
   transform: translateX(100%);
   transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
 }
@@ -200,12 +200,12 @@
   align-items: baseline;
   gap: 1.2rem;
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(26, 15, 15, 0.4);
   text-decoration: none;
-  padding: 0.6rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(26, 15, 15, 0.06);
   letter-spacing: -0.01em;
   opacity: 0;
   transform: translateY(20px);
@@ -220,11 +220,11 @@
 }
 
 .drawerLink:hover {
-  color: #fff;
+  color: var(--foreground);
 }
 
 .drawerLinkActive {
-  color: #fff;
+  color: var(--foreground);
 }
 
 .drawerLinkNum {
@@ -247,7 +247,7 @@
   align-items: flex-end;
   flex-wrap: wrap;
   gap: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 1px solid rgba(26, 15, 15, 0.07);
   opacity: 0;
   transition: opacity 0.4s ease 0.35s;
 }
@@ -258,13 +258,13 @@
 
 .drawerEmail {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(26, 15, 15, 0.5);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .drawerEmail:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--foreground);
 }
 
 .drawerSocials {
@@ -276,7 +276,7 @@
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(26, 15, 15, 0.4);
   text-decoration: none;
   transition: color 0.3s;
 }

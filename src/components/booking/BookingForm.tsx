@@ -169,6 +169,9 @@ export default function BookingForm() {
               </div>
             ))}
           </div>
+          <p style={{ textAlign: "center", marginTop: "2.5rem", fontSize: "0.85rem", color: "rgba(26, 15, 15, 0.65)" }}>
+            If you&apos;d like to make any changes to these instructions, please let us know before the event.
+          </p>
         </div>
 
         <div className={styles.submitWrap}>
