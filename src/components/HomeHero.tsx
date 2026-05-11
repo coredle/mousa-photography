@@ -48,23 +48,7 @@ export default function HomeHero() {
           </Link>
         </div>
 
-        {/* Inline stats */}
-        <div className={styles.heroStats}>
-          <div className={styles.heroStat}>
-            <span className={styles.heroStatNum}>200+</span>
-            <span className={styles.heroStatLabel}>Weddings</span>
-          </div>
-          <div className={styles.heroStatDivider} />
-          <div className={styles.heroStat}>
-            <span className={styles.heroStatNum}>12+</span>
-            <span className={styles.heroStatLabel}>Years</span>
-          </div>
-          <div className={styles.heroStatDivider} />
-          <div className={styles.heroStat}>
-            <span className={styles.heroStatNum}>18</span>
-            <span className={styles.heroStatLabel}>Countries</span>
-          </div>
-        </div>
+
       </div>
 
       {/* Scroll cue */}

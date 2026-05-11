@@ -1,14 +1,19 @@
 .pressBar {
   background: var(--foreground);
-  padding: 2.2rem 0;
+  padding: 3rem 0;
+  overflow: hidden;
 }
 
 .pressInner {
   display: flex;
   align-items: center;
   gap: 3rem;
-  flex-wrap: wrap;
-  justify-content: center;
+}
+
+.pressLabelWrapper {
+  flex-shrink: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  padding-right: 3rem;
 }
 
 .pressLabel {
@@ -16,25 +21,62 @@
   text-transform: uppercase;
   letter-spacing: 0.25em;
   color: rgba(255, 255, 255, 0.3);
-  flex-shrink: 0;
+  white-space: nowrap;
 }
 
-.pressLogos {
+.marqueeContainer {
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+  /* Add fading edges */
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.marqueeTrack {
   display: flex;
+  width: max-content;
   align-items: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 4rem;
+  padding-right: 4rem; /* Match the gap to ensure seamless looping */
+  animation: scrollMarquee 25s linear infinite;
+}
+
+/* Pause on hover */
+.marqueeContainer:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%); /* Since we have 4 identical sets */
+  }
 }
 
 .pressLogo {
   font-family: var(--font-serif);
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-style: italic;
   color: rgba(255, 255, 255, 0.35);
   letter-spacing: 0.02em;
   transition: color 0.3s;
   cursor: default;
+  white-space: nowrap;
 }
 
 .pressLogo:hover {
@@ -42,7 +84,22 @@
 }
 
 @media (max-width: 768px) {
-  .pressLogos {
+  .pressBar {
+    padding: 2rem 0;
+  }
+  .pressInner {
+    flex-direction: column;
     gap: 1.5rem;
+  }
+  .pressLabelWrapper {
+    display: none;
+  }
+  .marqueeTrack {
+    gap: 2.5rem;
+    padding-right: 2.5rem;
+    animation-duration: 20s;
+  }
+  .pressLogo {
+    font-size: 1rem;
   }
 }
