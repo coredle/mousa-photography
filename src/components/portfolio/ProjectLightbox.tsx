@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useCallback, useState } from "react";
-import Image from "next/image";
+import SafeImage from "../SafeImage";
 import { ProjectPhoto } from "@/lib/portfolioData";
 import styles from "@/app/portfolio/[slug]/project.module.css";
 
@@ -95,7 +95,7 @@ export default function ProjectLightbox({
 
       {/* Image */}
       <div className={styles.lbImageWrap} onClick={(e) => e.stopPropagation()}>
-        <Image
+        <SafeImage
           src={photo.src}
           alt={photo.caption}
           fill

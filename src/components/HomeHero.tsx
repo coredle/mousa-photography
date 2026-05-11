@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SafeImage from "./SafeImage";
 import Link from "next/link";
 import styles from "./HomeHero.module.css";
 
@@ -7,7 +7,7 @@ export default function HomeHero() {
     <section className={styles.hero}>
       {/* Full-bleed background image */}
       <div className={styles.heroImage}>
-        <Image
+        <SafeImage
           src="/images/IMG_6425.JPG.jpeg"
           alt="Mousa Wedding Photography — cinematic couple portrait"
           fill

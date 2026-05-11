@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SafeImage from "../SafeImage";
 import { Project, ProjectPhoto } from "@/lib/portfolioData";
 import styles from "./ProjectGallery.module.css";
 
@@ -16,7 +16,7 @@ export default function ProjectGallery({ project, onOpenLightbox }: ProjectGalle
           className={`${styles.galleryItem} ${photo.orientation === "landscape" ? styles.galleryLandscape : ""}`}
           onClick={() => onOpenLightbox(photo, i)}
         >
-          <Image
+          <SafeImage
             src={photo.src}
             alt={photo.caption}
             fill

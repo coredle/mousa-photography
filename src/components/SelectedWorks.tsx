@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
+import SafeImage from "./SafeImage";
 import Link from "next/link";
 import styles from "./SelectedWorks.module.css";
 
@@ -145,7 +145,7 @@ export default function SelectedWorks() {
           >
             {/* Image */}
             <div className={styles.imageWrap}>
-              <Image
+              <SafeImage
                 src={work.src}
                 alt={work.title}
                 fill

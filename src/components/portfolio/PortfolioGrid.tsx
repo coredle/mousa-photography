@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SafeImage from "../SafeImage";
 import Link from "next/link";
 import styles from "./PortfolioGrid.module.css";
 import { Project } from "@/lib/portfolioData";
@@ -17,7 +17,7 @@ export default function PortfolioGrid({ projects }: PortfolioGridProps) {
           className={`${styles.projectCard} ${i % 3 === 0 ? styles.projectCardWide : ""}`}
         >
           <div className={styles.projectImg}>
-            <Image
+            <SafeImage
               src={project.featuredSrc}
               alt={project.title}
               fill
