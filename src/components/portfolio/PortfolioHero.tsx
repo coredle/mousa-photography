@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SafeImage from "../SafeImage";
 import { PROJECTS, PROJECT_CATEGORIES } from "@/lib/portfolioData";
 import styles from "./PortfolioHero.module.css";
 
@@ -6,8 +6,8 @@ export default function PortfolioHero() {
   return (
     <header className={styles.hero}>
       <div className={styles.heroBg}>
-        <Image
-          src="/images/landscape_cinematic_1777395024853.png"
+        <SafeImage
+          src="/images/sarah-and-james/IMG_6148.JPG.jpeg"
           alt="Portfolio — Wedding Photography"
           fill
           style={{ objectFit: "cover" }}

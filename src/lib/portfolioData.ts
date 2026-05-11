@@ -20,8 +20,12 @@ export interface Project {
 
 /* ─── Helper: cycle through available images ─── */
 const FALLBACK_IMGS = [
-  "IMG_6147.JPG.jpeg", "IMG_6148.JPG.jpeg", "IMG_6155.JPG.jpeg", "IMG_6159.JPG.jpeg",
-  "IMG_6342.JPG.jpeg", "IMG_6347.JPG.jpeg", "IMG_6368.JPG.jpeg", "IMG_6374.JPG.jpeg"
+  "sarah-and-james/IMG_6147.JPG.jpeg", 
+  "sarah-and-james/IMG_6148.JPG.jpeg", 
+  "layla-and-omar/IMG_6342.JPG.jpeg", 
+  "layla-and-omar/IMG_6347.JPG.jpeg",
+  "emma-and-noah/IMG_6433.JPG.jpeg",
+  "aisha-and-khalid/IMG_6774.JPG.jpeg"
 ];
 
 function getProjectPhotos(folder: string, filenames: string[], captions: string[]): ProjectPhoto[] {

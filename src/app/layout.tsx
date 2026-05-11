@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "Mousa | Wedding Photographer — Capturing Love Stories",
   description: "Mousa is a luxury wedding photographer capturing timeless moments with cinematic depth and artistic vision. Available globally for weddings, engagements, and intimate ceremonies.",
   keywords: "wedding photographer, luxury wedding photography, mousa, bridal photography, engagement photography, wedding portraits, destination wedding photographer",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
