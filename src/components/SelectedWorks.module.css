@@ -623,4 +623,12 @@
   .index {
     font-size: 4rem;
   }
+
+  .overlay {
+    padding: 1.2rem;
+  }
+
+  .strip {
+    padding: 1rem 1.2rem;
+  }
 }

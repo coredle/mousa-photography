@@ -28,7 +28,6 @@ export default function Footer() {
           <div className={styles.navCol}>
             <span className={styles.navHeading}>Follow</span>
             <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">Pinterest</a>
             <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
           </div>
         </div>

@@ -19,22 +19,20 @@ export interface Project {
 }
 
 /* ─── Helper: cycle through available images ─── */
-const IMGS = [
-  "/images/landscape_cinematic_1777395024853.png",
-  "/images/portrait_dramatic_1777395593882.png",
-  "/images/urban_minimalist_1777395730107.png",
-  "/images/nature_ethereal_1777416415632.png",
-  "/images/ocean_waves_1777418691359.png",
-  "/images/golden_desert_1777418757933.png",
+const FALLBACK_IMGS = [
+  "IMG_6147.JPG.jpeg", "IMG_6148.JPG.jpeg", "IMG_6155.JPG.jpeg", "IMG_6159.JPG.jpeg",
+  "IMG_6342.JPG.jpeg", "IMG_6347.JPG.jpeg", "IMG_6368.JPG.jpeg", "IMG_6374.JPG.jpeg"
 ];
 
-function makePhotos(captions: string[]): ProjectPhoto[] {
-  return captions.map((caption, i) => ({
-    id: i + 1,
-    src: IMGS[i % IMGS.length],
-    caption,
-    orientation: i % 3 === 1 ? "portrait" : "landscape",
-  }));
+function getProjectPhotos(folder: string, filenames: string[], captions: string[]): ProjectPhoto[] {
+  return filenames.map((filename, i) => {
+    return {
+      id: i + 1,
+      src: folder ? `/images/${folder}/${filename}` : `/images/${filename}`,
+      caption: captions[i] || "Wedding photography",
+      orientation: i % 4 === 3 ? "landscape" : "portrait",
+    };
+  });
 }
 
 /* ─── Projects ─── */
@@ -47,8 +45,10 @@ export const PROJECTS: Project[] = [
     location: "Santorini, Greece",
     description:
       "A golden-hour celebration overlooking the Aegean Sea. Sarah and James chose an intimate clifftop garden for their vows — blooms of white peonies, linen draping, and the scent of the Mediterranean in the air.",
-    featuredSrc: "/images/landscape_cinematic_1777395024853.png",
-    photos: makePhotos([
+    featuredSrc: "/images/sarah-and-james/IMG_6148.JPG.jpeg",
+    photos: getProjectPhotos("sarah-and-james", [
+      "IMG_6147.JPG.jpeg", "IMG_6148.JPG.jpeg", "IMG_6155.JPG.jpeg", "IMG_6159.JPG.jpeg"
+    ], [
       "First look at the clifftop",
       "The bride in morning light",
       "Ring details on the stone balustrade",
@@ -79,8 +79,10 @@ export const PROJECTS: Project[] = [
     location: "Beirut, Lebanon",
     description:
       "An opulent evening in Beirut's most storied ballroom. Layla and Omar's wedding was a masterclass in luxury — crystal chandeliers, Lebanese florals, and a love story as vibrant as the city itself.",
-    featuredSrc: "/images/portrait_dramatic_1777395593882.png",
-    photos: makePhotos([
+    featuredSrc: "/images/layla-and-omar/IMG_6374.JPG.jpeg",
+    photos: getProjectPhotos("layla-and-omar", [
+      "IMG_6342.JPG.jpeg", "IMG_6347.JPG.jpeg", "IMG_6368.JPG.jpeg", "IMG_6374.JPG.jpeg", "IMG_6384.JPG.jpeg"
+    ], [
       "Bridal portrait in the suite",
       "The groom preparing",
       "Henna ceremony details",
@@ -111,8 +113,10 @@ export const PROJECTS: Project[] = [
     location: "Dolomites, Italy",
     description:
       "Just the two of them, a mountain meadow, and an officiant. Emma and Noah stripped their day back to its purest form — no crowd, no noise. Only vows, wildflowers, and a horizon that felt infinite.",
-    featuredSrc: "/images/nature_ethereal_1777416415632.png",
-    photos: makePhotos([
+    featuredSrc: "/images/emma-and-noah/IMG_6433.JPG.jpeg",
+    photos: getProjectPhotos("emma-and-noah", [
+      "IMG_6433.JPG.jpeg", "IMG_6438.JPG.jpeg", "IMG_6457.JPG.jpeg", "IMG_6461.JPG.jpeg", "IMG_6468.JPG.jpeg", "IMG_6481.JPG.jpeg"
+    ], [
       "Morning mist over the valley",
       "Emma in her silk slip dress",
       "Noah's hand-written vows",
@@ -143,8 +147,8 @@ export const PROJECTS: Project[] = [
     location: "Azores, Portugal",
     description:
       "A windswept ceremony on the edge of the Atlantic. Nina and Carlos celebrated surrounded by black volcanic rock, turquoise water, and the roar of the ocean — a wedding as untamed and beautiful as their love.",
-    featuredSrc: "/images/ocean_waves_1777418691359.png",
-    photos: makePhotos([
+    featuredSrc: "/images/IMG_6384.JPG.jpeg",
+    photos: getProjectPhotos("", FALLBACK_IMGS, [
       "Ceremony arch with driftwood",
       "Bride and bridesmaids on the cliff",
       "Groom's reaction at first look",
@@ -175,8 +179,10 @@ export const PROJECTS: Project[] = [
     location: "AlUla, Saudi Arabia",
     description:
       "Vows exchanged beneath ancient sandstone cliffs at sunset. Aisha and Khalid's ceremony was held in one of the world's most breathtaking landscapes — a setting as timeless and enduring as their commitment.",
-    featuredSrc: "/images/golden_desert_1777418757933.png",
-    photos: makePhotos([
+    featuredSrc: "/images/aisha-and-khalid/IMG_6774.JPG.jpeg",
+    photos: getProjectPhotos("aisha-and-khalid", [
+      "IMG_6774.JPG.jpeg", "IMG_6812.JPG.jpeg", "IMG_6825.JPG.jpeg", "IMG_6833.JPG.jpeg", "IMG_6843.JPG.jpeg", "IMG_6852.JPG.jpeg", "IMG_6877.JPG.jpeg", "IMG_6885.JPG.jpeg"
+    ], [
       "Sunrise over the canyon",
       "Aisha in her embroidered gown",
       "Khalid's kandura detail",
@@ -207,8 +213,8 @@ export const PROJECTS: Project[] = [
     location: "Tuscany, Italy",
     description:
       "A long summer lunch under the pergola of a centuries-old Tuscan villa. Sofia and Luca's wedding was warm, unhurried, and full of family — the kind of day that lingers in the memory like the taste of good wine.",
-    featuredSrc: "/images/urban_minimalist_1777395730107.png",
-    photos: makePhotos([
+    featuredSrc: "/images/IMG_6159.JPG.jpeg",
+    photos: getProjectPhotos("", FALLBACK_IMGS, [
       "Villa gates at sunrise",
       "Sofia at the vanity in soft light",
       "Luca with his father before the ceremony",

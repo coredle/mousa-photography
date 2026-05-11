@@ -13,7 +13,7 @@ export default function ProjectGallery({ project, onOpenLightbox }: ProjectGalle
       {project.photos.map((photo, i) => (
         <div
           key={photo.id}
-          className={`${styles.galleryItem} ${photo.orientation === "portrait" ? styles.galleryTall : ""}`}
+          className={`${styles.galleryItem} ${photo.orientation === "landscape" ? styles.galleryLandscape : ""}`}
           onClick={() => onOpenLightbox(photo, i)}
         >
           <Image

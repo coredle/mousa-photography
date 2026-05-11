@@ -1,21 +1,22 @@
 .gallery {
   columns: 3;
-  column-gap: 4px;
+  column-gap: 12px;
   padding: 4rem 6rem;
 }
 
 .galleryItem {
   break-inside: avoid;
   position: relative;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
   overflow: hidden;
   cursor: pointer;
   background: #e8e0dd;
-  height: 300px;
+  border-radius: 6px;
+  aspect-ratio: 4 / 5;
 }
 
-.galleryTall {
-  height: 460px;
+.galleryLandscape {
+  aspect-ratio: 3 / 2;
 }
 
 .galleryImg {
@@ -74,7 +75,6 @@
 }
 
 @media (max-width: 768px) {
-  .gallery { columns: 1; padding: 2rem 1.5rem; }
-  .galleryItem { height: 260px; }
-  .galleryTall { height: 380px; }
+  .gallery { columns: 1; padding: 2rem 1.5rem; column-gap: 16px; }
+  .galleryItem { margin-bottom: 16px; }
 }

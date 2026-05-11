@@ -8,7 +8,7 @@ export default function HomeHero() {
       {/* Full-bleed background image */}
       <div className={styles.heroImage}>
         <Image
-          src="/images/landscape_cinematic_1777395024853.png"
+          src="/images/IMG_6468.JPG.jpeg"
           alt="Mousa Wedding Photography — cinematic couple portrait"
           fill
           style={{ objectFit: "cover" }}

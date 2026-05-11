@@ -163,4 +163,14 @@
     margin-top: 3rem;
     padding: 0 1rem;
   }
+  .glassCard {
+    padding: 1.5rem;
+  }
+  .submitBtn {
+    width: 100%;
+    padding: 1.2rem 0;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
 }
